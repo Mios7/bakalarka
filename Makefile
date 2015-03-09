@@ -2,20 +2,20 @@ default: pdf
 
 main.dvi: *.tex *.bib komlogo-new.eps obr.png obr2.png stamp.png trade.png Makefile
 	rm -f *.toc
-	cslatex main
+	latex main
 	bibtex main
-	cslatex main
-	cslatex main
+	latex main
+	latex main
 
 main.ps: main.dvi
 	dvips main.dvi
 
 main.pdf: *.tex *.bib komlogo-new.pdf obr.pdf obr2.pdf stamp.pdf trade.pdf Makefile
 	rm -f *.toc
-	pdfcslatex main
+	pdflatex main
 	bibtex main
-	pdfcslatex main
-	pdfcslatex main
+	pdflatex main
+	pdflatex main
 
 dvi: main.dvi
 
